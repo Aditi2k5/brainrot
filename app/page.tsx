@@ -50,7 +50,7 @@ export default function WelcomePage() {
           </div>
           </div>
           <div className="space-x-4">
-            <Button onClick={() => router.push('/profile')} className="hover:scale-105 transition-transform duration-300 ease-in-out">
+            <Button onClick={() => router.push('/tatebot')} className="hover:scale-105 transition-transform duration-300 ease-in-out">
               Time to get Red-Pilled
             </Button>
          

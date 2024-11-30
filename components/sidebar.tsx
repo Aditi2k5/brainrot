@@ -1,8 +1,9 @@
+'use client'
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { UserCircle2, BrainCircuit, Bot, LogOut, Menu, X } from 'lucide-react'
+import { UserCircle2, BrainCircuit, Bot, LogOut, Menu, X, Bitcoin, RatIcon, DollarSign } from 'lucide-react'
 import { SignOutButton } from "@clerk/nextjs"
 import { useState } from "react"
 
@@ -16,20 +17,30 @@ export function Layout({ children }: LayoutProps) {
 
   const menuItems = [
     {
+      href: "/tatebot",
+      icon: Bot,
+      label: "Tatebot"
+    },
+    {
+      href: "/quiz",
+      icon: BrainCircuit,
+      label: "Gen-Z Quiz"
+    },
+    {
       href: "/profile",
       icon: UserCircle2,
       label: "Profile"
     },
     {
-      href: "/quiz",
-      icon: BrainCircuit,
-      label: "Gen Z Quizz"
+      href: "/chilling",
+      icon: RatIcon,
+      label: "Chill Zone"
     },
     {
-      href: "/tatebot",
-      icon: Bot,
-      label: "Tatebot"
-    }
+      href: "/vbucks",
+      icon: DollarSign,
+      label: "V-Bucks"
+    },
   ]
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen)
