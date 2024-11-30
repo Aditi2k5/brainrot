@@ -53,7 +53,9 @@ export function Layout({ children }: LayoutProps) {
         )}
       >
         <div className="flex items-center gap-2 p-4 border-b">
-          <div className="h-8 w-8 rounded-full bg-foreground" />
+          
+            <img src="https://utfs.io/f/tohTttgIkwLBfWiRGJ4VraNYqupKDLOejH1yW3JUgx2G4Ezc" alt=""className="h-12 w-18 rounded-full bg-foreground" />
+         
           <span className="font-semibold">Tateism</span>
         </div>
         
