@@ -4,7 +4,7 @@
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { SignedIn, SignedOut } from "@clerk/nextjs"
-import Link from "next/link"
+
 import { useUser } from "@clerk/nextjs"
 
 export default function WelcomePage() {

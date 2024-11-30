@@ -1,7 +1,7 @@
 import Groq from "groq-sdk";
 import { NextResponse, NextRequest } from "next/server";
 import { getPrompt } from "../../../utils/prompt";
-import { NextApiResponse } from "next";
+
 
 const options = {
     model: process.env.MODEL_ID || "llama-3.1-70b-versatile",
@@ -12,7 +12,7 @@ const options = {
     stream: true,
 };
 
-export async function POST(req: NextRequest, res: NextApiResponse) {
+export async function POST(req: NextRequest) {
     const assistantName: any = 
         req.nextUrl.searchParams.get("assistantName") || "tatebot";
     
