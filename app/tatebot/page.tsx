@@ -56,7 +56,7 @@ export default function TateBotPage() {
     setInput('')
 
     try {
-      const response = await fetch('pages/api/tatebot?assistantName=tatebot', {
+      const response = await fetch('pages/api/tatebot', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
