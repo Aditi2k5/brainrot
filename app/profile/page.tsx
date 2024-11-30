@@ -1,5 +1,5 @@
 'use client'
-import { Layout } from "@/components/layout"
+import { Layout } from "@/components/sidebar"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import Image from "next/image"
