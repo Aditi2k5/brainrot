@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import { SignIn } from "@clerk/nextjs"
 
@@ -12,7 +12,6 @@ export default function SignInPage() {
             <img
               src="https://utfs.io/f/tohTttgIkwLBjs0Z7Jsm1uJ6fwE0PFXBatOUvnN2Wo9AITLd"
               alt="Profile"
-         
               className="object-cover"
             />
           </div>
@@ -23,8 +22,13 @@ export default function SignInPage() {
 
         {/* Right side - Sign In */}
         <div className="w-full max-w-sm md:w-1/2 lg:w-3/5">
-          <SignIn 
-          signUpUrl="/sign-up"
+          <SignIn
+            signUpUrl="/sign-up"
+            appearance={{
+              variables: {
+                colorPrimary: "#FEA84B",
+              },
+            }}
           />
         </div>
       </div>

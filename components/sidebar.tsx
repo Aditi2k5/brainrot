@@ -1,9 +1,19 @@
-'use client'
+"use client"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { UserCircle2, BrainCircuit, Bot, LogOut, Menu, X, Bitcoin, RatIcon, DollarSign } from 'lucide-react'
+import {
+  UserCircle2,
+  BrainCircuit,
+  Bot,
+  LogOut,
+  Menu,
+  X,
+  Bitcoin,
+  RatIcon,
+  DollarSign,
+} from "lucide-react"
 import { SignOutButton } from "@clerk/nextjs"
 import { useState } from "react"
 
@@ -19,27 +29,27 @@ export function Layout({ children }: LayoutProps) {
     {
       href: "/tatebot",
       icon: Bot,
-      label: "Tatebot"
+      label: "Tatebot",
     },
     {
       href: "/quiz",
       icon: BrainCircuit,
-      label: "Gen-Z Quiz"
+      label: "Gen-Z Quiz",
     },
     {
       href: "/profile",
       icon: UserCircle2,
-      label: "Profile"
+      label: "Profile",
     },
     {
       href: "/chilling",
       icon: RatIcon,
-      label: "Chill Zone"
+      label: "Chill Zone",
     },
     {
       href: "/vbucks",
       icon: DollarSign,
-      label: "V-Bucks"
+      label: "V-Bucks",
     },
   ]
 
@@ -48,32 +58,39 @@ export function Layout({ children }: LayoutProps) {
   return (
     <div className="flex min-h-screen relative">
       {/* Mobile Menu Toggle */}
-      <button 
+      <button
         onClick={toggleSidebar}
         className="fixed top-4 left-4 z-50 md:hidden bg-white shadow-md p-2 rounded-full"
       >
-        {isSidebarOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        {isSidebarOpen ? (
+          <X className="h-6 w-6" />
+        ) : (
+          <Menu className="h-6 w-6" />
+        )}
       </button>
 
       {/* Sidebar */}
-      <aside 
+      <aside
         className={cn(
-          "fixed inset-y-0 left-0 z-40 w-64 bg-background border-r transform transition-transform duration-300 ease-in-out",
+          "fixed shadow-lg inset-y-0 left-0 z-40 w-64 bg-background border-r border-[#FEA84B] rounded-r-xl transform transition-transform duration-300 ease-in-out",
           "md:relative md:translate-x-0",
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
-        <div className="flex items-center gap-2 p-4 border-b">
-          
-            <img src="https://utfs.io/f/tohTttgIkwLBfWiRGJ4VraNYqupKDLOejH1yW3JUgx2G4Ezc" alt=""className="h-12 w-18 rounded-full bg-foreground" />
-         
-          <span className="font-semibold">Tateism</span>
+        <div className="flex items-center gap-2 p-4">
+          <img
+            src="https://utfs.io/f/tohTttgIkwLBfWiRGJ4VraNYqupKDLOejH1yW3JUgx2G4Ezc"
+            alt=""
+            className="h-12 w-18 rounded-full bg-foreground"
+          />
+
+          <span className="font-semibold text-3xl">Tateism</span>
         </div>
-        
-        <nav className="space-y-1 p-2">
+
+        <nav className="flex flex-col gap-2 p-2">
           {menuItems.map((item) => (
-            <Link 
-              key={item.href} 
+            <Link
+              key={item.href}
               href={item.href}
               onClick={() => setIsSidebarOpen(false)}
             >
@@ -81,10 +98,10 @@ export function Layout({ children }: LayoutProps) {
                 variant="ghost"
                 className={cn(
                   "w-full justify-start gap-2 transition-all duration-200",
-                  "hover:bg-muted/30 hover:text-foreground",
+                  "hover:bg-[#FEA84B] hover:text-foreground",
                   "active:scale-95",
-                  pathname === item.href 
-                    ? "bg-muted/50 text-foreground font-semibold" 
+                  pathname === item.href
+                    ? "bg-[#F9BD7C] text-foreground font-semibold"
                     : "text-muted-foreground"
                 )}
               >
@@ -93,8 +110,8 @@ export function Layout({ children }: LayoutProps) {
               </Button>
             </Link>
           ))}
-          
-          <div className="pt-4 border-t mt-4">
+
+          <div className="pt-4 border-t border-[#FEA84B] mt-4">
             <SignOutButton>
               <Button
                 variant="ghost"
@@ -114,7 +131,7 @@ export function Layout({ children }: LayoutProps) {
 
       {/* Overlay for mobile */}
       {isSidebarOpen && (
-        <div 
+        <div
           className="fixed inset-0 z-30 bg-black/50 md:hidden"
           onClick={toggleSidebar}
         />

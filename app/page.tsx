@@ -1,5 +1,4 @@
-'use client'
-
+"use client"
 
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -28,32 +27,36 @@ export default function WelcomePage() {
           <h2 className="text-3xl font-bold text-gray-900">Tateism</h2>
         </div>
         <div className="space-y-4">
-          <Button 
-            onClick={() => router.push('/sign-up')}
+          <Button
+            onClick={() => router.push("/sign-up")}
             className="border border-orange-300 bg-white text-black hover:bg-gray-100"
           >
             Take the 💊
           </Button>
-         
         </div>
       </SignedOut>
 
       <SignedIn>
         <div className="space-y-6 text-center">
-        
           <div>
             <h1 className="text-3xl font-bold">
               Welcome, {user?.firstName || "Blue Piller"}!
             </h1>
-          <div>
-            <img src="https://utfs.io/f/tohTttgIkwLBcKo9YOtHM9JZw0kxOS3m8pGaKdUnFgyIqTVX" alt="" className="shadow-xl mt-4" />
-          </div>
+            <div>
+              <img
+                src="https://utfs.io/f/tohTttgIkwLBcKo9YOtHM9JZw0kxOS3m8pGaKdUnFgyIqTVX"
+                alt=""
+                className="shadow-xl mt-4"
+              />
+            </div>
           </div>
           <div className="space-x-4">
-            <Button onClick={() => router.push('/tatebot')} className="hover:scale-105 transition-transform duration-300 ease-in-out">
-              Time to get Red-Pilled
+            <Button
+              onClick={() => router.push("/tatebot")}
+              className="hover:bg-[#F9BD7C] hover:scale-105 transition-transform duration-300 ease-in-out bg-[#FEA84B]"
+            >
+              Ready to get Red-Pilled?
             </Button>
-         
           </div>
         </div>
       </SignedIn>
