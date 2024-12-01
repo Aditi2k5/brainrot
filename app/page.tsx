@@ -44,7 +44,7 @@ export default function WelcomePage() {
             </h1>
             <div>
               <img
-                src="https://utfs.io/f/tohTttgIkwLBcKo9YOtHM9JZw0kxOS3m8pGaKdUnFgyIqTVX"
+                src="https://utfs.io/f/tohTttgIkwLBO52BuAAZtCNlqJHrGY6kbBaXmnevyED4WpTi"
                 alt=""
                 className="shadow-xl mt-4"
               />

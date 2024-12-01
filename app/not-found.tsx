@@ -7,6 +7,7 @@ return(
          we're all chill here.
         </p>
         <img src="https://utfs.io/f/tohTttgIkwLBx0qqYnRJ1Lhx6lKibDfad9rR3gnq75MEO0mG" className="h-72 mx-auto mb-4 text-yellow-300" />
+        router.push("/tatebot")
       </div>
     </div>
   </>

@@ -37,22 +37,22 @@ export function Layout({ children }: LayoutProps) {
       label: "Gen-Z Quiz",
     },
     {
-      href: "/profile",
-      icon: UserCircle2,
-      label: "Profile",
+      href: "/vbucks",
+      icon: DollarSign,
+      label: "V-Bucks",
     },
     {
       href: "/chilling",
       icon: RatIcon,
       label: "Chill Zone",
     },
+  
     {
-      href: "/vbucks",
-      icon: DollarSign,
-      label: "V-Bucks",
+      href: "/profile",
+      icon: UserCircle2,
+      label: "Profile",
     },
   ]
-
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen)
 
   return (

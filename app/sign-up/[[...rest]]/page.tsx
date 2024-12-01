@@ -10,7 +10,7 @@ export default function SignUpPage() {
         <div className="w-48 md:w-1/2 lg:w-2/5 flex-shrink-0">
           <div className=" overflow-hidden rounded-lg shadow-md bg-red-900">
             <img
-              src="https://utfs.io/f/tohTttgIkwLBO0O41AZtCNlqJHrGY6kbBaXmnevyED4WpTiP"
+              src="https://utfs.io/f/tohTttgIkwLBIM4QZUcbZjpeGEr2Wm61iIz4SyUgV8dvRN39"
               alt="Profile"
               className="object-cover h-full w-full"
             />

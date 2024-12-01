@@ -10,7 +10,7 @@ export default function SignInPage() {
         <div className="w-48 md:w-1/2 lg:w-2/5 flex-shrink-0">
           <div className="relative aspect-square overflow-hidden rounded-lg shadow-md">
             <img
-              src="https://utfs.io/f/tohTttgIkwLBjs0Z7Jsm1uJ6fwE0PFXBatOUvnN2Wo9AITLd"
+              src="https://utfs.io/f/tohTttgIkwLBNFkGVzB0MS7KREkUZ2aInT5s4Jumv9FYXyB6"
               alt="Profile"
               className="object-cover"
             />
