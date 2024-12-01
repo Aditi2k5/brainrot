@@ -121,10 +121,13 @@ export default function TateBotPage() {
             <Bot className="h-10 w-10 text-[#FEA84B]" />
             <h2 className="text-xl font-bold">Tatebot</h2>
           </div>
-          <Button variant="outline" className="flex items-center">
-            <span>Call Me</span>
+          <a
+            href="tel:+17753708147"
+            className="flex items-center shadow gap-2 p-2 px-4 hover:cursor-pointer border border-[#FEA84B] rounded-lg hover:bg-gray-100"
+          >
+            <span className="font-semibold">Call Me</span>
             <Phone className="h-4 w-4" />
-          </Button>
+          </a>
         </div>
 
         <div className="flex-1 overflow-y-auto p-4 space-y-4">
