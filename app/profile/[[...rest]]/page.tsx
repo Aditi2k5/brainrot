@@ -38,9 +38,7 @@ export default function ProfilePage() {
             )}
 
             {/* Optional: Clerk's UserProfile component for additional profile management */}
-            <div className="mt-6 w-full flex justify-center">
-              <UserProfile />
-            </div>
+           
           </div>
         </div>
       </SignedIn>

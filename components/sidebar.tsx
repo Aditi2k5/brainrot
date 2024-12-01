@@ -16,6 +16,7 @@ import {
 } from "lucide-react"
 import { SignOutButton } from "@clerk/nextjs"
 import { useState } from "react"
+import { useUser } from "@clerk/nextjs"
 
 interface LayoutProps {
   children: React.ReactNode
@@ -24,6 +25,7 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   const pathname = usePathname()
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const { user } = useUser()
 
   const menuItems = [
     {
@@ -46,12 +48,7 @@ export function Layout({ children }: LayoutProps) {
       icon: RatIcon,
       label: "Chill Zone",
     },
-  
-    {
-      href: "/profile",
-      icon: UserCircle2,
-      label: "Profile",
-    },
+
   ]
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen)
 
@@ -72,7 +69,7 @@ export function Layout({ children }: LayoutProps) {
       {/* Sidebar */}
       <aside
         className={cn(
-          "fixed shadow-lg inset-y-0 left-0 z-40 w-64 bg-background border-r border-[#FEA84B] rounded-r-xl transform transition-transform duration-300 ease-in-out",
+          "fixed shadow-lg inset-y-0 left-0 z-40 w-64 bg-background border-r border-[#FEA84B] rounded-r-xl transform transition-transform duration-300 ease-in-out flex flex-col",
           "md:relative md:translate-x-0",
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         )}
@@ -87,7 +84,7 @@ export function Layout({ children }: LayoutProps) {
           <span className="font-semibold text-3xl">Tateism</span>
         </div>
 
-        <nav className="flex flex-col gap-2 p-2">
+        <nav className="flex flex-col gap-2 p-2 flex-grow">
           {menuItems.map((item) => (
             <Link
               key={item.href}
@@ -110,23 +107,42 @@ export function Layout({ children }: LayoutProps) {
               </Button>
             </Link>
           ))}
-
-          <div className="pt-4 border-t border-[#FEA84B] mt-4">
-            <SignOutButton>
-              <Button
-                variant="ghost"
-                className={cn(
-                  "w-full justify-start gap-2 text-destructive",
-                  "hover:bg-destructive/10 hover:text-destructive",
-                  "active:scale-95"
-                )}
-              >
-                <LogOut className="h-4 w-4" />
-                Sign Out
-              </Button>
-            </SignOutButton>
-          </div>
         </nav>
+
+        {/* User Info Section pushed to bottom */}
+        {user && (
+          <div className="flex items-center gap-3 p-4 border-t border-[#FEA84B]">
+            <div className="relative h-8 w-8 overflow-hidden rounded-full">
+              <img
+                src={user.imageUrl || "/placeholder.svg"}
+                alt="Profile picture"
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <div>
+              <h2 className="text-lg font-bold">
+                {user.fullName || user.username || "User"}
+              </h2>
+         
+            </div>
+          </div>
+        )}
+
+        <div className="p-2 border-t border-[#FEA84B]">
+          <SignOutButton>
+            <Button
+              variant="ghost"
+              className={cn(
+                "w-full justify-start gap-2 text-destructive",
+                "hover:bg-destructive/10 hover:text-destructive",
+                "active:scale-95"
+              )}
+            >
+              <LogOut className="h-4 w-4" />
+              Sign Out
+            </Button>
+          </SignOutButton>
+        </div>
       </aside>
 
       {/* Overlay for mobile */}
